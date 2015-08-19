@@ -1,0 +1,168 @@
+\hypertarget{classarchived}{}\section{archived$<$ Value $>$ Class Template Reference}
+\label{classarchived}\index{archived$<$ Value $>$@{archived$<$ Value $>$}}
+
+
+A class to keep track of an incrementally updated variable.  
+
+
+
+
+{\ttfamily \#include $<$archived.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classarchived_1_1version}{version}
+\begin{DoxyCompactList}\small\item\em A version of an archived$<$$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{}typedef Value \hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type}\label{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}
+
+\begin{DoxyCompactList}\small\item\em The archived value\textquotesingle{}s type. \end{DoxyCompactList}\item 
+\hypertarget{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{}typedef \hyperlink{classarchived_1_1version}{version} \hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type}\label{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}
+
+\begin{DoxyCompactList}\small\item\em The type of versions provided. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarchived_a752f1c457d9431caab148b866fc34c0f}{archived} (const \hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \&initial\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the archived$<$$>$ with initial\+\_\+value. After construction, the archived$<$$>$\textquotesingle{}s current value is initial\+\_\+value. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_a8d1c7030894bf31b7add0bccd041d69a}{increment\+\_\+by} (const \hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \&increment)
+\begin{DoxyCompactList}\small\item\em Increments the value by increment. Uses operator+= on the value. Returns a new version. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \hyperlink{classarchived_af69a2753a3b9844609a4b2684e4e0bf3}{value} () const 
+\begin{DoxyCompactList}\small\item\em Returns the current value. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_a5af939f79bddf33f8773fcb89016a85d}{clear\+\_\+history} ()
+\begin{DoxyCompactList}\small\item\em Clears the stored history data. Leaves current value unchanged. All associated versions are invalidated. Returns a new (valid) version. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_ae76263bf1bcd3dd0f6023c8142691a6c}{reset} (const \hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \&initial\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Clears the stored history data. Sets current value to initial\+\_\+value. All associated versions are invalidated. Returns a new (valid) version. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_a7b7505259596c1deaff30a9fb7942bb5}{current} () const 
+\begin{DoxyCompactList}\small\item\em Returns a new version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Value$>$class archived$<$ Value $>$}
+
+A class to keep track of an incrementally updated variable. 
+
+\subsection*{Overview}
+
+The class archived$<$\+Value$>$ keeps track of a variable of type Value that is incrementally upgraded.
+
+It is possible to retrieve intermediate versions, which later on allow a computation of the difference between that version and the current version.
+
+\subsubsection*{Versions\+:}
+
+An archived$<$$>$ provides the concept of a version. A version is associated with the archived$<$$>$ that created it. A version has a validity, it is either valid or invalid.
+
+A version is only valid as long as the associated archived$<$$>$ exists.
+
+Valid versions can be used to compute the difference between the value of the associated archived$<$$>$ at creation time of the version and the current one.
+
+A version is valid when acquired via an archived$<$$>$, but can be invalidated by certain actions on the associated archived$<$$>$. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classarchived_a752f1c457d9431caab148b866fc34c0f}{}\index{archived@{archived}!archived@{archived}}
+\index{archived@{archived}!archived@{archived}}
+\subsubsection[{archived}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::{\bf archived} (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\+\_\+type} \&}]{initial\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classarchived_a752f1c457d9431caab148b866fc34c0f}
+
+
+Constructor that initializes the archived$<$$>$ with initial\+\_\+value. After construction, the archived$<$$>$\textquotesingle{}s current value is initial\+\_\+value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+\_\+value} & The initial value. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classarchived_a5af939f79bddf33f8773fcb89016a85d}{}\index{archived@{archived}!clear\+\_\+history@{clear\+\_\+history}}
+\index{clear\+\_\+history@{clear\+\_\+history}!archived@{archived}}
+\subsubsection[{clear\+\_\+history}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::clear\+\_\+history (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarchived_a5af939f79bddf33f8773fcb89016a85d}
+
+
+Clears the stored history data. Leaves current value unchanged. All associated versions are invalidated. Returns a new (valid) version. 
+
+\begin{DoxyReturn}{Returns}
+A new version. 
+\end{DoxyReturn}
+\hypertarget{classarchived_a7b7505259596c1deaff30a9fb7942bb5}{}\index{archived@{archived}!current@{current}}
+\index{current@{current}!archived@{archived}}
+\subsubsection[{current}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::current (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarchived_a7b7505259596c1deaff30a9fb7942bb5}
+
+
+Returns a new version. 
+
+\begin{DoxyReturn}{Returns}
+A new version. 
+\end{DoxyReturn}
+\hypertarget{classarchived_a8d1c7030894bf31b7add0bccd041d69a}{}\index{archived@{archived}!increment\+\_\+by@{increment\+\_\+by}}
+\index{increment\+\_\+by@{increment\+\_\+by}!archived@{archived}}
+\subsubsection[{increment\+\_\+by}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::increment\+\_\+by (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\+\_\+type} \&}]{increment}
+\end{DoxyParamCaption}
+)}\label{classarchived_a8d1c7030894bf31b7add0bccd041d69a}
+
+
+Increments the value by increment. Uses operator+= on the value. Returns a new version. 
+
+\begin{DoxyReturn}{Returns}
+A new version. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em increment} & The value to increment by. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_ae76263bf1bcd3dd0f6023c8142691a6c}{}\index{archived@{archived}!reset@{reset}}
+\index{reset@{reset}!archived@{archived}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::reset (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\+\_\+type} \&}]{initial\+\_\+value}
+\end{DoxyParamCaption}
+)}\label{classarchived_ae76263bf1bcd3dd0f6023c8142691a6c}
+
+
+Clears the stored history data. Sets current value to initial\+\_\+value. All associated versions are invalidated. Returns a new (valid) version. 
+
+\begin{DoxyReturn}{Returns}
+A new version. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+\_\+value} & The new value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_af69a2753a3b9844609a4b2684e4e0bf3}{}\index{archived@{archived}!value@{value}}
+\index{value@{value}!archived@{archived}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::{\bf value\+\_\+type} {\bf archived}$<$ Value $>$\+::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarchived_af69a2753a3b9844609a4b2684e4e0bf3}
+
+
+Returns the current value. 
+
+\begin{DoxyReturn}{Returns}
+the current value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{archived_8h}{archived.\+h}\end{DoxyCompactItemize}

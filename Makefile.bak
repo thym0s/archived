@@ -1,0 +1,32 @@
+CXX = g++
+CFLAGS = -std=c++11 -Wall -pedantic -g
+LIBS = -Llibs
+
+RM = rm -rf
+# define the CPP source files
+SRCS = archived_test.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+
+
+
+.PHONY: depend clean
+
+	all:    
+
+test: archived_test
+
+archived_test: $(OBJS) 
+	$(CXX) $(CFLAGS) $(LIBS) $(OBJS) -o $@ 
+
+%.o: %.cpp
+	$(CXX) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(RM) *.o monotone_test
+
+depend: $(SRCS)
+	makedepend -- $(CFLAGS) -- $(SRCS)
+
+# DO NOT DELETE THIS LINE -- make depend needs it

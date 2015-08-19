@@ -1,0 +1,217 @@
+\hypertarget{classarchived_1_1version}{}\section{archived$<$ Value $>$\+:\+:version Class Reference}
+\label{classarchived_1_1version}\index{archived$<$ Value $>$\+::version@{archived$<$ Value $>$\+::version}}
+
+
+A version of an archived$<$$>$  
+
+
+
+
+{\ttfamily \#include $<$archived.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Value \hyperlink{classarchived_1_1version_ae9028b053631ebb7832c9457cac4c29b}{value\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The associated archived value\textquotesingle{}s type. \end{DoxyCompactList}\item 
+typedef \hyperlink{classarchived}{archived}$<$ Value $>$ \hyperlink{classarchived_1_1version_a791c80c76addc75c5ee41f31ae41817a}{archive\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The associated archived\textquotesingle{}s type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarchived_1_1version_a75950e89fdd7d100d9bb9c52be9750e5}{version} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. A default constructed version is not valid. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_1_1version_ac511988e424b10abf26638b9aeb49934}{version} (const \hyperlink{classarchived_1_1version}{version} \&other)=default
+\begin{DoxyCompactList}\small\item\em Default Copy Constructor A copy constructed version has the same same properties as the source. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_1_1version_a554be7a467115e99c8f2b6ea4aa8ea2d}{version} (\hyperlink{classarchived_1_1version}{version} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Default Move Constructor A move constructed version has the same same properties as the source. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_1_1version}{version} \& \hyperlink{classarchived_1_1version_aa808a277ce1c999ac7472aaa1d77a7e3}{operator=} (const \hyperlink{classarchived_1_1version}{version} \&other)=default
+\begin{DoxyCompactList}\small\item\em Default Assignment operator Copies from other. An assigned version has the same same properties as the source. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_1_1version}{version} \& \hyperlink{classarchived_1_1version_a8f5347b0b1207478ac2ec6219e5c315d}{operator=} (\hyperlink{classarchived_1_1version}{version} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Default Move Assignment operator Moves from other. A move assigned version has the same same properties as the source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classarchived_ae1e2e3488734f8f0bcd58f5f91f31d52}{archive\+\_\+type\+::iterator\+\_\+type} \hyperlink{classarchived_1_1version_acc56ba0e55a7f1856a459799d6d71aa9}{iterator\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarchived_1_1version_a6fa630c864ba44fceceaee87c04d6767}{version} (const \hyperlink{classarchived_1_1version_acc56ba0e55a7f1856a459799d6d71aa9}{iterator\+\_\+type} \&archive\+\_\+iterator)
+\begin{DoxyCompactList}\small\item\em A constructor initializing archive\+\_\+iterator\+\_\+ with archive\+\_\+iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \hyperlink{classarchived_1_1version_a0dcd43fda1e30a8d63bdfc22624fd185}{archived$<$ Value $>$}
+\item 
+\hyperlink{classarchived_1_1version_acc56ba0e55a7f1856a459799d6d71aa9}{iterator\+\_\+type} \hyperlink{classarchived_1_1version_a151e7efe6febec7b504c59af4e0fb153}{archive\+\_\+iterator\+\_\+}
+\begin{DoxyCompactList}\small\item\em Points to the first commit after the version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarchived_1_1version_ae9028b053631ebb7832c9457cac4c29b}{value\+\_\+type} \hyperlink{classarchived_1_1version_ab88b258861d0c138b2f978d4aab59be5}{diff\+\_\+to\+\_\+current} (const \hyperlink{classarchived_1_1version}{version} \&old)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Value$>$class archived$<$ Value $>$\+::version}
+
+A version of an archived$<$$>$ 
+
+An archived$<$$>$ provides the concept of a version. A version is associated with the archived$<$$>$ that created it. A version has a validity, it is either valid or invalid.
+
+A version is only valid as long as the associated archived$<$$>$ exists.
+
+Valid versions can be used to compute the difference between the value of the associated archived$<$$>$ at creation time of the version and the current one.
+
+A version is valid when acquired via an archived$<$$>$, but can be invalidated by certain actions on the associated archived$<$$>$. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classarchived_1_1version_a791c80c76addc75c5ee41f31ae41817a}{}\index{archived\+::version@{archived\+::version}!archive\+\_\+type@{archive\+\_\+type}}
+\index{archive\+\_\+type@{archive\+\_\+type}!archived\+::version@{archived\+::version}}
+\subsubsection[{archive\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ typedef {\bf archived}$<$ Value $>$ {\bf archived}$<$ Value $>$\+::{\bf version\+::archive\+\_\+type}}\label{classarchived_1_1version_a791c80c76addc75c5ee41f31ae41817a}
+
+
+The associated archived\textquotesingle{}s type. 
+
+\hypertarget{classarchived_1_1version_acc56ba0e55a7f1856a459799d6d71aa9}{}\index{archived\+::version@{archived\+::version}!iterator\+\_\+type@{iterator\+\_\+type}}
+\index{iterator\+\_\+type@{iterator\+\_\+type}!archived\+::version@{archived\+::version}}
+\subsubsection[{iterator\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ typedef {\bf archive\+\_\+type\+::iterator\+\_\+type} {\bf archived}$<$ Value $>$\+::{\bf version\+::iterator\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_1_1version_acc56ba0e55a7f1856a459799d6d71aa9}
+\hypertarget{classarchived_1_1version_ae9028b053631ebb7832c9457cac4c29b}{}\index{archived\+::version@{archived\+::version}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!archived\+::version@{archived\+::version}}
+\subsubsection[{value\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ typedef Value {\bf archived}$<$ Value $>$\+::{\bf version\+::value\+\_\+type}}\label{classarchived_1_1version_ae9028b053631ebb7832c9457cac4c29b}
+
+
+The associated archived value\textquotesingle{}s type. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classarchived_1_1version_a6fa630c864ba44fceceaee87c04d6767}{}\index{archived\+::version@{archived\+::version}!version@{version}}
+\index{version@{version}!archived\+::version@{archived\+::version}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::version\+::version (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator\+\_\+type} \&}]{archive\+\_\+iterator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}\label{classarchived_1_1version_a6fa630c864ba44fceceaee87c04d6767}
+
+
+A constructor initializing archive\+\_\+iterator\+\_\+ with archive\+\_\+iterator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em archive\+\_\+iterator} & The initial archive\+\_\+iterator\+\_\+ \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_1_1version_a75950e89fdd7d100d9bb9c52be9750e5}{}\index{archived\+::version@{archived\+::version}!version@{version}}
+\index{version@{version}!archived\+::version@{archived\+::version}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::version\+::version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarchived_1_1version_a75950e89fdd7d100d9bb9c52be9750e5}
+
+
+Default Constructor. A default constructed version is not valid. 
+
+\hypertarget{classarchived_1_1version_ac511988e424b10abf26638b9aeb49934}{}\index{archived\+::version@{archived\+::version}!version@{version}}
+\index{version@{version}!archived\+::version@{archived\+::version}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\+::version\+::version (
+\begin{DoxyParamCaption}
+\item[{const {\bf version} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\label{classarchived_1_1version_ac511988e424b10abf26638b9aeb49934}
+
+
+Default Copy Constructor A copy constructed version has the same same properties as the source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source of the copy. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_1_1version_a554be7a467115e99c8f2b6ea4aa8ea2d}{}\index{archived\+::version@{archived\+::version}!version@{version}}
+\index{version@{version}!archived\+::version@{archived\+::version}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\+::version\+::version (
+\begin{DoxyParamCaption}
+\item[{{\bf version} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\label{classarchived_1_1version_a554be7a467115e99c8f2b6ea4aa8ea2d}
+
+
+Default Move Constructor A move constructed version has the same same properties as the source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source of the move. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classarchived_1_1version_aa808a277ce1c999ac7472aaa1d77a7e3}{}\index{archived\+::version@{archived\+::version}!operator=@{operator=}}
+\index{operator=@{operator=}!archived\+::version@{archived\+::version}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf version}\& {\bf archived}$<$ Value $>$\+::version\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf version} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\label{classarchived_1_1version_aa808a277ce1c999ac7472aaa1d77a7e3}
+
+
+Default Assignment operator Copies from other. An assigned version has the same same properties as the source. 
+
+\begin{DoxyReturn}{Returns}
+A reference to $\ast$this 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source of the copy. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_1_1version_a8f5347b0b1207478ac2ec6219e5c315d}{}\index{archived\+::version@{archived\+::version}!operator=@{operator=}}
+\index{operator=@{operator=}!archived\+::version@{archived\+::version}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf version}\& {\bf archived}$<$ Value $>$\+::version\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf version} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\label{classarchived_1_1version_a8f5347b0b1207478ac2ec6219e5c315d}
+
+
+Default Move Assignment operator Moves from other. A move assigned version has the same same properties as the source. 
+
+\begin{DoxyReturn}{Returns}
+A reference to $\ast$this 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source of the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classarchived_1_1version_ab88b258861d0c138b2f978d4aab59be5}{}\index{archived\+::version@{archived\+::version}!diff\+\_\+to\+\_\+current@{diff\+\_\+to\+\_\+current}}
+\index{diff\+\_\+to\+\_\+current@{diff\+\_\+to\+\_\+current}!archived\+::version@{archived\+::version}}
+\subsubsection[{diff\+\_\+to\+\_\+current}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf value\+\_\+type} diff\+\_\+to\+\_\+current (
+\begin{DoxyParamCaption}
+\item[{const {\bf version} \&}]{old}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classarchived_1_1version_ab88b258861d0c138b2f978d4aab59be5}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classarchived_1_1version_a151e7efe6febec7b504c59af4e0fb153}{}\index{archived\+::version@{archived\+::version}!archive\+\_\+iterator\+\_\+@{archive\+\_\+iterator\+\_\+}}
+\index{archive\+\_\+iterator\+\_\+@{archive\+\_\+iterator\+\_\+}!archived\+::version@{archived\+::version}}
+\subsubsection[{archive\+\_\+iterator\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf iterator\+\_\+type} {\bf archived}$<$ Value $>$\+::version\+::archive\+\_\+iterator\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_1_1version_a151e7efe6febec7b504c59af4e0fb153}
+
+
+Points to the first commit after the version. 
+
+\hypertarget{classarchived_1_1version_a0dcd43fda1e30a8d63bdfc22624fd185}{}\index{archived\+::version@{archived\+::version}!archived$<$ Value $>$@{archived$<$ Value $>$}}
+\index{archived$<$ Value $>$@{archived$<$ Value $>$}!archived\+::version@{archived\+::version}}
+\subsubsection[{archived$<$ Value $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ friend {\bf archived}$<$ Value $>$\+::version\+::archived$<$ Value $>$\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_1_1version_a0dcd43fda1e30a8d63bdfc22624fd185}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{archived_8h}{archived.\+h}\end{DoxyCompactItemize}

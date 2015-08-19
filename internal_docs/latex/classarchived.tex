@@ -1,0 +1,350 @@
+\hypertarget{classarchived}{}\section{archived$<$ Value $>$ Class Template Reference}
+\label{classarchived}\index{archived$<$ Value $>$@{archived$<$ Value $>$}}
+
+
+A class to keep track of an incrementally updated variable.  
+
+
+
+
+{\ttfamily \#include $<$archived.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classarchived_1_1commit}{commit}
+\begin{DoxyCompactList}\small\item\em A commit is an atomic diff. It contains an iterator to its successor and the value of the diff. \end{DoxyCompactList}\item 
+class \hyperlink{classarchived_1_1version}{version}
+\begin{DoxyCompactList}\small\item\em A version of an archived$<$$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Value \hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The archived value\textquotesingle{}s type. \end{DoxyCompactList}\item 
+typedef \hyperlink{classarchived_1_1version}{version} \hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The type of versions provided. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarchived_a752f1c457d9431caab148b866fc34c0f}{archived} (const \hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \&initial\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the archived$<$$>$ with initial\+\_\+value. After construction, the archived$<$$>$\textquotesingle{}s current value is initial\+\_\+value. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a9867dabd20017e71b02ce9fe6f5ad824}{archived} (const \hyperlink{classarchived}{archived}$<$ Value $>$ \&other)=delete
+\item 
+\hyperlink{classarchived_a0aa3fd83a51267b2d77baeeca539e689}{archived} (\hyperlink{classarchived}{archived}$<$ Value $>$ \&\&other)=delete
+\item 
+\hyperlink{classarchived}{archived}$<$ Value $>$ \& \hyperlink{classarchived_a2b77c3406e1344409c839cbce3269c7c}{operator=} (const \hyperlink{classarchived}{archived}$<$ Value $>$ \&other)=delete
+\item 
+\hyperlink{classarchived}{archived}$<$ Value $>$ \& \hyperlink{classarchived_add4b63a811b7ee6506ed32054c646f44}{operator=} (\hyperlink{classarchived}{archived}$<$ Value $>$ \&\&other)=delete
+\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_a8d1c7030894bf31b7add0bccd041d69a}{increment\+\_\+by} (const \hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \&increment)
+\begin{DoxyCompactList}\small\item\em Increments the value by increment. Uses operator+= on the value. Returns a new version. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \hyperlink{classarchived_af69a2753a3b9844609a4b2684e4e0bf3}{value} () const 
+\begin{DoxyCompactList}\small\item\em Returns the current value. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_a5af939f79bddf33f8773fcb89016a85d}{clear\+\_\+history} ()
+\begin{DoxyCompactList}\small\item\em Clears the stored history data. Leaves current value unchanged. All associated versions are invalidated. Returns a new (valid) version. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_ae76263bf1bcd3dd0f6023c8142691a6c}{reset} (const \hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \&initial\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Clears the stored history data. Sets current value to initial\+\_\+value. All associated versions are invalidated. Returns a new (valid) version. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_a7b7505259596c1deaff30a9fb7942bb5}{current} () const 
+\begin{DoxyCompactList}\small\item\em Returns a new version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classarchived_1_1commit}{commit} \hyperlink{classarchived_a690d4ac871a018e652efb9b0b69aa7ef}{commit\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Commit type. A commit is an atomic diff and points to the successing commit. \end{DoxyCompactList}\item 
+typedef std\+::forward\+\_\+list$<$ \hyperlink{classarchived_a690d4ac871a018e652efb9b0b69aa7ef}{commit\+\_\+type} $>$ \hyperlink{classarchived_afc884a6d27f4c8fde4d0c2d658f1bc60}{storage\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The container for commits. A forward list, because iterators shall continue to be valid if a new commit is added. \end{DoxyCompactList}\item 
+typedef storage\+\_\+type\+::iterator \hyperlink{classarchived_ae1e2e3488734f8f0bcd58f5f91f31d52}{iterator\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Iterator type for storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classarchived_aee0178395c8514fcff373a57b2789793}{create\+\_\+head\+\_\+commit} ()
+\begin{DoxyCompactList}\small\item\em Creates a commit with zero diff that is its own successor and stores it at the beginnin of storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classarchived_abab0fd2b11101b73dba1ca502e5ac5c0}{compute\+\_\+diff\+\_\+to\+\_\+current} (const \hyperlink{classarchived_ae1e2e3488734f8f0bcd58f5f91f31d52}{iterator\+\_\+type} \&old)
+\begin{DoxyCompactList}\small\item\em Modifies the commit referenced by old to contain a diff to the current value. The succesor of $\ast$old is set to the head\+\_\+commit. \end{DoxyCompactList}\item 
+static bool \hyperlink{classarchived_aebc07b91c133d50a7f6e398470fd0eec}{is\+\_\+head\+\_\+commit} (const \hyperlink{classarchived_ae1e2e3488734f8f0bcd58f5f91f31d52}{iterator\+\_\+type} \&iterator\+\_\+to\+\_\+commit)
+\begin{DoxyCompactList}\small\item\em Checks whether an iterator references the head\+\_\+commit The head\+\_\+commit can be recognized as being its own succesor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \hyperlink{classarchived_a451217f8620e57386f93a583dcbc3818}{version\+\_\+type}
+\item 
+\hyperlink{classarchived_afc884a6d27f4c8fde4d0c2d658f1bc60}{storage\+\_\+type} \hyperlink{classarchived_a237b5ef11e3daff58fb83b1d931f63c0}{storage\+\_\+}
+\begin{DoxyCompactList}\small\item\em Storage for commits. Should always begin with a head\+\_\+commit. \end{DoxyCompactList}\item 
+\hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \hyperlink{classarchived_a0976968f5faa2ce5f3341d9af76c46a1}{last\+\_\+}
+\begin{DoxyCompactList}\small\item\em Version of the initial commit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{value\+\_\+type} \hyperlink{classarchived_a65e9c61cc77a5d2e1a53ff1778110494}{diff\+\_\+to\+\_\+current} (const \hyperlink{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{version\+\_\+type} \&old)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Value$>$class archived$<$ Value $>$}
+
+A class to keep track of an incrementally updated variable. 
+
+\subsection*{Overview}
+
+The class archived$<$\+Value$>$ keeps track of a variable of type Value that is incrementally upgraded.
+
+It is possible to retrieve intermediate versions, which later on allow a computation of the difference between that version and the current version.
+
+\subsubsection*{Versions\+:}
+
+An archived$<$$>$ provides the concept of a version. A version is associated with the archived$<$$>$ that created it. A version has a validity, it is either valid or invalid.
+
+A version is only valid as long as the associated archived$<$$>$ exists.
+
+Valid versions can be used to compute the difference between the value of the associated archived$<$$>$ at creation time of the version and the current one.
+
+A version is valid when acquired via an archived$<$$>$, but can be invalidated by certain actions on the associated archived$<$$>$. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classarchived_a690d4ac871a018e652efb9b0b69aa7ef}{}\index{archived@{archived}!commit\+\_\+type@{commit\+\_\+type}}
+\index{commit\+\_\+type@{commit\+\_\+type}!archived@{archived}}
+\subsubsection[{commit\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ typedef {\bf commit} {\bf archived}$<$ Value $>$\+::{\bf commit\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_a690d4ac871a018e652efb9b0b69aa7ef}
+
+
+Commit type. A commit is an atomic diff and points to the successing commit. 
+
+\hypertarget{classarchived_ae1e2e3488734f8f0bcd58f5f91f31d52}{}\index{archived@{archived}!iterator\+\_\+type@{iterator\+\_\+type}}
+\index{iterator\+\_\+type@{iterator\+\_\+type}!archived@{archived}}
+\subsubsection[{iterator\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ typedef storage\+\_\+type\+::iterator {\bf archived}$<$ Value $>$\+::{\bf iterator\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_ae1e2e3488734f8f0bcd58f5f91f31d52}
+
+
+Iterator type for storage. 
+
+\hypertarget{classarchived_afc884a6d27f4c8fde4d0c2d658f1bc60}{}\index{archived@{archived}!storage\+\_\+type@{storage\+\_\+type}}
+\index{storage\+\_\+type@{storage\+\_\+type}!archived@{archived}}
+\subsubsection[{storage\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ typedef std\+::forward\+\_\+list$<$ {\bf commit\+\_\+type} $>$ {\bf archived}$<$ Value $>$\+::{\bf storage\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_afc884a6d27f4c8fde4d0c2d658f1bc60}
+
+
+The container for commits. A forward list, because iterators shall continue to be valid if a new commit is added. 
+
+\hypertarget{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}{}\index{archived@{archived}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!archived@{archived}}
+\subsubsection[{value\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ typedef Value {\bf archived}$<$ Value $>$\+::{\bf value\+\_\+type}}\label{classarchived_a0f6c13c55e504fe3bbfc04f3896e5abc}
+
+
+The archived value\textquotesingle{}s type. 
+
+\hypertarget{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}{}\index{archived@{archived}!version\+\_\+type@{version\+\_\+type}}
+\index{version\+\_\+type@{version\+\_\+type}!archived@{archived}}
+\subsubsection[{version\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ typedef {\bf version} {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type}}\label{classarchived_a75b8e571e7c6aca9432b9aa2ba601c00}
+
+
+The type of versions provided. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classarchived_a752f1c457d9431caab148b866fc34c0f}{}\index{archived@{archived}!archived@{archived}}
+\index{archived@{archived}!archived@{archived}}
+\subsubsection[{archived}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::{\bf archived} (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\+\_\+type} \&}]{initial\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classarchived_a752f1c457d9431caab148b866fc34c0f}
+
+
+Constructor that initializes the archived$<$$>$ with initial\+\_\+value. After construction, the archived$<$$>$\textquotesingle{}s current value is initial\+\_\+value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+\_\+value} & The initial value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_a9867dabd20017e71b02ce9fe6f5ad824}{}\index{archived@{archived}!archived@{archived}}
+\index{archived@{archived}!archived@{archived}}
+\subsubsection[{archived}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\+::{\bf archived} (
+\begin{DoxyParamCaption}
+\item[{const {\bf archived}$<$ Value $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{classarchived_a9867dabd20017e71b02ce9fe6f5ad824}
+\hypertarget{classarchived_a0aa3fd83a51267b2d77baeeca539e689}{}\index{archived@{archived}!archived@{archived}}
+\index{archived@{archived}!archived@{archived}}
+\subsubsection[{archived}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\+::{\bf archived} (
+\begin{DoxyParamCaption}
+\item[{{\bf archived}$<$ Value $>$ \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{classarchived_a0aa3fd83a51267b2d77baeeca539e689}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classarchived_a5af939f79bddf33f8773fcb89016a85d}{}\index{archived@{archived}!clear\+\_\+history@{clear\+\_\+history}}
+\index{clear\+\_\+history@{clear\+\_\+history}!archived@{archived}}
+\subsubsection[{clear\+\_\+history}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::clear\+\_\+history (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarchived_a5af939f79bddf33f8773fcb89016a85d}
+
+
+Clears the stored history data. Leaves current value unchanged. All associated versions are invalidated. Returns a new (valid) version. 
+
+\begin{DoxyReturn}{Returns}
+A new version. 
+\end{DoxyReturn}
+\hypertarget{classarchived_abab0fd2b11101b73dba1ca502e5ac5c0}{}\index{archived@{archived}!compute\+\_\+diff\+\_\+to\+\_\+current@{compute\+\_\+diff\+\_\+to\+\_\+current}}
+\index{compute\+\_\+diff\+\_\+to\+\_\+current@{compute\+\_\+diff\+\_\+to\+\_\+current}!archived@{archived}}
+\subsubsection[{compute\+\_\+diff\+\_\+to\+\_\+current}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ void {\bf archived}$<$ Value $>$\+::compute\+\_\+diff\+\_\+to\+\_\+current (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator\+\_\+type} \&}]{old}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classarchived_abab0fd2b11101b73dba1ca502e5ac5c0}
+
+
+Modifies the commit referenced by old to contain a diff to the current value. The succesor of $\ast$old is set to the head\+\_\+commit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old} & The old commit to be updated \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_aee0178395c8514fcff373a57b2789793}{}\index{archived@{archived}!create\+\_\+head\+\_\+commit@{create\+\_\+head\+\_\+commit}}
+\index{create\+\_\+head\+\_\+commit@{create\+\_\+head\+\_\+commit}!archived@{archived}}
+\subsubsection[{create\+\_\+head\+\_\+commit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ void {\bf archived}$<$ Value $>$\+::create\+\_\+head\+\_\+commit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_aee0178395c8514fcff373a57b2789793}
+
+
+Creates a commit with zero diff that is its own successor and stores it at the beginnin of storage. 
+
+\hypertarget{classarchived_a7b7505259596c1deaff30a9fb7942bb5}{}\index{archived@{archived}!current@{current}}
+\index{current@{current}!archived@{archived}}
+\subsubsection[{current}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::current (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarchived_a7b7505259596c1deaff30a9fb7942bb5}
+
+
+Returns a new version. 
+
+\begin{DoxyReturn}{Returns}
+A new version. 
+\end{DoxyReturn}
+\hypertarget{classarchived_a8d1c7030894bf31b7add0bccd041d69a}{}\index{archived@{archived}!increment\+\_\+by@{increment\+\_\+by}}
+\index{increment\+\_\+by@{increment\+\_\+by}!archived@{archived}}
+\subsubsection[{increment\+\_\+by}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::increment\+\_\+by (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\+\_\+type} \&}]{increment}
+\end{DoxyParamCaption}
+)}\label{classarchived_a8d1c7030894bf31b7add0bccd041d69a}
+
+
+Increments the value by increment. Uses operator+= on the value. Returns a new version. 
+
+\begin{DoxyReturn}{Returns}
+A new version. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em increment} & The value to increment by. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_aebc07b91c133d50a7f6e398470fd0eec}{}\index{archived@{archived}!is\+\_\+head\+\_\+commit@{is\+\_\+head\+\_\+commit}}
+\index{is\+\_\+head\+\_\+commit@{is\+\_\+head\+\_\+commit}!archived@{archived}}
+\subsubsection[{is\+\_\+head\+\_\+commit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ bool {\bf archived}$<$ Value $>$\+::is\+\_\+head\+\_\+commit (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator\+\_\+type} \&}]{iterator\+\_\+to\+\_\+commit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classarchived_aebc07b91c133d50a7f6e398470fd0eec}
+
+
+Checks whether an iterator references the head\+\_\+commit The head\+\_\+commit can be recognized as being its own succesor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator\+\_\+to\+\_\+commit} & The iterator to the commit that is checked \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_a2b77c3406e1344409c839cbce3269c7c}{}\index{archived@{archived}!operator=@{operator=}}
+\index{operator=@{operator=}!archived@{archived}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\& {\bf archived}$<$ Value $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf archived}$<$ Value $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{classarchived_a2b77c3406e1344409c839cbce3269c7c}
+\hypertarget{classarchived_add4b63a811b7ee6506ed32054c646f44}{}\index{archived@{archived}!operator=@{operator=}}
+\index{operator=@{operator=}!archived@{archived}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\& {\bf archived}$<$ Value $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf archived}$<$ Value $>$ \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{classarchived_add4b63a811b7ee6506ed32054c646f44}
+\hypertarget{classarchived_ae76263bf1bcd3dd0f6023c8142691a6c}{}\index{archived@{archived}!reset@{reset}}
+\index{reset@{reset}!archived@{archived}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::reset (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\+\_\+type} \&}]{initial\+\_\+value}
+\end{DoxyParamCaption}
+)}\label{classarchived_ae76263bf1bcd3dd0f6023c8142691a6c}
+
+
+Clears the stored history data. Sets current value to initial\+\_\+value. All associated versions are invalidated. Returns a new (valid) version. 
+
+\begin{DoxyReturn}{Returns}
+A new version. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+\_\+value} & The new value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarchived_af69a2753a3b9844609a4b2684e4e0bf3}{}\index{archived@{archived}!value@{value}}
+\index{value@{value}!archived@{archived}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ {\bf archived}$<$ Value $>$\+::{\bf value\+\_\+type} {\bf archived}$<$ Value $>$\+::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarchived_af69a2753a3b9844609a4b2684e4e0bf3}
+
+
+Returns the current value. 
+
+\begin{DoxyReturn}{Returns}
+the current value. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classarchived_a65e9c61cc77a5d2e1a53ff1778110494}{}\index{archived@{archived}!diff\+\_\+to\+\_\+current@{diff\+\_\+to\+\_\+current}}
+\index{diff\+\_\+to\+\_\+current@{diff\+\_\+to\+\_\+current}!archived@{archived}}
+\subsubsection[{diff\+\_\+to\+\_\+current}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf value\+\_\+type} diff\+\_\+to\+\_\+current (
+\begin{DoxyParamCaption}
+\item[{const {\bf version\+\_\+type} \&}]{old}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classarchived_a65e9c61cc77a5d2e1a53ff1778110494}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classarchived_a0976968f5faa2ce5f3341d9af76c46a1}{}\index{archived@{archived}!last\+\_\+@{last\+\_\+}}
+\index{last\+\_\+@{last\+\_\+}!archived@{archived}}
+\subsubsection[{last\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf version\+\_\+type} {\bf archived}$<$ Value $>$\+::last\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_a0976968f5faa2ce5f3341d9af76c46a1}
+
+
+Version of the initial commit. 
+
+\hypertarget{classarchived_a237b5ef11e3daff58fb83b1d931f63c0}{}\index{archived@{archived}!storage\+\_\+@{storage\+\_\+}}
+\index{storage\+\_\+@{storage\+\_\+}!archived@{archived}}
+\subsubsection[{storage\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ {\bf storage\+\_\+type} {\bf archived}$<$ Value $>$\+::storage\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\label{classarchived_a237b5ef11e3daff58fb83b1d931f63c0}
+
+
+Storage for commits. Should always begin with a head\+\_\+commit. 
+
+\hypertarget{classarchived_a451217f8620e57386f93a583dcbc3818}{}\index{archived@{archived}!version\+\_\+type@{version\+\_\+type}}
+\index{version\+\_\+type@{version\+\_\+type}!archived@{archived}}
+\subsubsection[{version\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value$>$ friend {\bf archived}$<$ Value $>$\+::{\bf version\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}\label{classarchived_a451217f8620e57386f93a583dcbc3818}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{archived_8h}{archived.\+h}\end{DoxyCompactItemize}

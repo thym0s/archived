@@ -1,0 +1,39 @@
+\hypertarget{archived_8h}{}\section{archived.\+h File Reference}
+\label{archived_8h}\index{archived.\+h@{archived.\+h}}
+{\ttfamily \#include $<$forward\+\_\+list$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classarchived}{archived$<$ Value $>$}
+\begin{DoxyCompactList}\small\item\em A class to keep track of an incrementally updated variable. \end{DoxyCompactList}\item 
+class \hyperlink{classarchived_1_1version}{archived$<$ Value $>$\+::version}
+\begin{DoxyCompactList}\small\item\em A version of an archived$<$$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Version $>$ }\\Version\+::value\+\_\+type \hyperlink{archived_8h_a0069eef7ac554f43a4fff498c02c2d01}{diff\+\_\+to\+\_\+current} (const Version \&old)
+\begin{DoxyCompactList}\small\item\em Computes the difference of old and current value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{archived_8h_a0069eef7ac554f43a4fff498c02c2d01}{}\index{archived.\+h@{archived.\+h}!diff\+\_\+to\+\_\+current@{diff\+\_\+to\+\_\+current}}
+\index{diff\+\_\+to\+\_\+current@{diff\+\_\+to\+\_\+current}!archived.\+h@{archived.\+h}}
+\subsubsection[{diff\+\_\+to\+\_\+current}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Version $>$ Version\+::value\+\_\+type diff\+\_\+to\+\_\+current (
+\begin{DoxyParamCaption}
+\item[{const Version \&}]{old}
+\end{DoxyParamCaption}
+)}\label{archived_8h_a0069eef7ac554f43a4fff498c02c2d01}
+
+
+Computes the difference of old and current value. 
+
+This function computes the accumulated increments of the archived$<$$>$ associated with old from old\textquotesingle{}s creation time to present.
+
+\begin{DoxyReturn}{Returns}
+The value difference between old and current version. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em old} & An old Version. \\
+\hline
+\end{DoxyParams}
